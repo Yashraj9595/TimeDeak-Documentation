@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Functionalities - Pravas Documentation</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+        </aside>
+        <main>
+            <h1>Core Functionalities</h1>
+            
+            <div class="card">
+                <h2>Overview</h2>
+                <p>This section provides a detailed explanation of how the core functionalities of the Pravas app work together to create a seamless tourism experience. While the feature-specific pages describe individual components, this section focuses on the integration and interaction between these components, explaining the underlying processes that power the application.</p>
+            </div>
+
+            <div class="card">
+                <h2>System Architecture</h2>
+                <h3>High-Level Architecture</h3>
+                <ul>
+                    <li><strong>Frontend Layer:</strong>
+                        <ul>
+                            <li>Native mobile applications (iOS and Android)</li>
+                            <li>Progressive web application for browser access</li>
+                            <li>Shared UI components and design system</li>
+                            <li>Client-side processing for offline capabilities</li>
+                        </ul>
+                    </li>
+                    <li><strong>API Gateway Layer:</strong>
+                        <ul>
+                            <li>Centralized entry point for all client requests</li>
+                            <li>Authentication and authorization</li>
+                            <li>Rate limiting and traffic management</li>
+                            <li>Request routing to appropriate microservices</li>
+                        </ul>
+                    </li>
+                    <li><strong>Microservices Layer:</strong>
+                        <ul>
+                            <li>Domain-specific services (itinerary, booking, marketplace, etc.)</li>
+                            <li>Independent deployment and scaling</li>
+                            <li>Service discovery and registry</li>
+                            <li>Inter-service communication patterns</li>
+                        </ul>
+                    </li>
+                    <li><strong>Data Layer:</strong>
+                        <ul>
+                            <li>Polyglot persistence with appropriate databases for different needs</li>
+                            <li>Data synchronization mechanisms</li>
+                            <li>Caching strategies for performance</li>
+                            <li>Data backup and recovery systems</li>
+                        </ul>
+                    </li>
+                    <li><strong>Integration Layer:</strong>
+                        <ul>
+                            <li>External API integrations (maps, weather, transport)</li>
+                            <li>Blockchain network connections</li>
+                            <li>Third-party service adapters</li>
+                            <li>Event bus for asynchronous communication</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Component Interaction</h3>
+                <p>The following diagram illustrates how the major components of the system interact:</p>
+                <pre>
+User Interface Layer
+    ↓ ↑
+API Gateway & Authentication
+    ↓ ↑
+┌─────────────────────────────────────────────────────┐
+│                                                     │
+│  ┌─────────┐   ┌─────────┐   ┌─────────┐           │
+│  │Itinerary│   │Booking  │   │Marketplace│         │
+│  │Service  │←→│Service  │←→│Service   │         │
+│  └─────────┘   └─────────┘   └─────────┘           │
+│        ↕            ↕             ↕                │
+│  ┌─────────┐   ┌─────────┐   ┌─────────┐           │
+│  │AR/VR    │   │Chatbot  │   │Analytics │         │
+│  │Service  │←→│Service  │←→│Service   │         │
+│  └─────────┘   └─────────┘   └─────────┘           │
+│                                                     │
+└─────────────────────────────────────────────────────┘
+    ↓ ↑           ↓ ↑            ↓ ↑
+┌─────────┐   ┌─────────┐   ┌─────────┐
+│Database │   │Blockchain│   │External │
+│Layer    │   │Network   │   │Services │
+└─────────┘   └─────────┘   └─────────┘
+                </pre>
+            </div>
+
+            <div class="card">
+                <h2>Core Processes</h2>
+                <h3>1. User Authentication & Profile Management</h3>
+                <p><strong>Process Flow:</strong></p>
+                <ol>
+                    <li><strong>Registration:</strong>
+                        <ul>
+                            <li>User provides basic information (email, phone, name)</li>
+                            <li>Verification through OTP or email confirmation</li>
+                            <li>Creation of user profile in database</li>
+                            <li>Optional: Blockchain wallet generation</li>
+                        </ul>
+                    </li>
+                    <li><strong>Authentication:</strong>
+                        <ul>
+                            <li>Multi-factor authentication options</li>
+                            <li>JWT token generation for session management</li>
+                            <li>Role-based access control assignment</li>
+                            <li>Session monitoring and management</li>
+                        </ul>
+                    </li>
+                    <li><strong>Profile Management:</strong>
+                        <ul>
+                            <li>Preference storage and updates</li>
+                            <li>Travel history tracking</li>
+                            <li>Personalization data management</li>
+                            <li>Privacy settings and data sharing controls</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h3>2. Personalized Itinerary Generation</h3>
+                <p><strong>Process Flow:</strong></p>
+                <ol>
+                    <li><strong>Data Collection:</strong>
+                        <ul>
+                            <li>User inputs preferences and constraints</li>
+                            <li>System retrieves user profile data</li>
+                            <li>Current conditions (weather, events, availability) are checked</li>
+                            <li>Destination database is queried for attractions</li>
+                        </ul>
+                    </li>
+                    <li><strong>AI Processing:</strong>
+                        <ul>
+                            <li>Recommendation engine ranks potential attractions</li>
+                            <li>Optimization algorithm creates efficient route</li>
+                            <li>Time allocation based on attraction importance and user preferences</li>
+                            <li>Alternative options generation for flexibility</li>
+                        </ul>
+                    </li>
+                    <li><strong>Itinerary Creation:</strong>
+                        <ul>
+                            <li>Day-by-day schedule generation</li>
+                            <li>Transportation options integration</li>
+                            <li>Meal and rest breaks scheduling</li>
+                            <li>Budget allocation across activities</li>
+                        </ul>
+                    </li>
+                    <li><strong>Feedback Loop:</strong>
+                        <ul>
+                            <li>User modifications to suggested itinerary</li>
+                            <li>System learns from accepted/rejected suggestions</li>
+                            <li>Continuous refinement of recommendation model</li>
+                            <li>Adaptation to changing conditions during trip</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h3>3. Booking & Payment Processing</h3>
+                <p><strong>Process Flow:</strong></p>
+                <ol>
+                    <li><strong>Service Selection:</strong>
+                        <ul>
+                            <li>User selects accommodation, activity, or service</li>
+                            <li>System checks real-time availability</li>
+                            <li>Booking details are confirmed by user</li>
+                            <li>Reservation is temporarily held</li>
+                        </ul>
+                    </li>
+                    <li><strong>Payment Initiation:</strong>
+                        <ul>
+                            <li>User selects payment method (traditional or blockchain)</li>
+                            <li>For blockchain: Smart contract is generated</li>
+                            <li>For traditional: Payment gateway is initiated</li>
+                            <li>Payment details are securely processed</li>
+                        </ul>
+                    </li>
+                    <li><strong>Transaction Processing:</strong>
+                        <ul>
+                            <li>For blockchain: Funds are locked in escrow contract</li>
+                            <li>For traditional: Payment authorization is obtained</li>
+                            <li>Booking is confirmed in the system</li>
+                            <li>Service provider is notified</li>
+                        </ul>
+                    </li>
+                    <li><strong>Post-Service Settlement:</strong>
+                        <ul>
+                            <li>User confirms service completion</li>
+                            <li>For blockchain: Smart contract releases payment</li>
+                            <li>For traditional: Payment capture is completed</li>
+                            <li>Receipts and confirmation are generated</li>
+                            <li>Review request is triggered</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h3>4. AR/VR Content Delivery</h3>
+                <p><strong>Process Flow:</strong></p>
+                <ol>
+                    <li><strong>Content Discovery:</strong>
+                        <ul>
+                            <li>User location or search query triggers content availability check</li>
+                            <li>Available AR/VR experiences are presented to user</li>
+                            <li>Content metadata is retrieved (size, requirements, description)</li>
+                            <li>Preview thumbnails are displayed</li>
+                        </ul>
+                    </li>
+                    <li><strong>Content Preparation:</strong>
+                        <ul>
+                            <li>Device capability check for compatibility</li>
+                            <li>Appropriate quality level selection based on device and connection</li>
+                            <li>Progressive download initiation or offline package access</li>
+                            <li>Loading of required frameworks and libraries</li>
+                        </ul>
+                    </li>
+                    <li><strong>Experience Execution:</strong>
+                        <ul>
+                            <li>For AR: Camera activation and environment scanning</li>
+                            <li>For VR: Orientation sensor calibration</li>
+                            <li>Content rendering and interactive element initialization</li>
+                            <li>User interaction tracking and response</li>
+                        </ul>
+                    </li>
+                    <li><strong>Post-Experience Processing:</strong>
+                        <ul>
+                            <li>Usage analytics collection</li>
+                            <li>Experience completion tracking</li>
+                            <li>Related content recommendations</li>
+                            <li>Optional: Social sharing of experience</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h3>5. Marketplace Operations</h3>
+                <p><strong>Process Flow:</strong></p>
+                <ol>
+                    <li><strong>Listing Management:</strong>
+                        <ul>
+                            <li>Service providers create and update listings</li>
+                            <li>Verification process for new providers</li>
+                            <li>Product/service categorization and tagging</li>
+                            <li>Pricing and availability management</li>
+                        </ul>
+                    </li>
+                    <li><strong>Discovery & Search:</strong>
+                        <ul>
+                            <li>Full-text search across listings</li>
+                            <li>Filtering by category, location, price, and ratings</li>
+                            <li>Personalized recommendations based on user profile</li>
+                            <li>Geolocation-based nearby offerings</li>
+                        </ul>
+                    </li>
+                    <li><strong>Transaction Handling:</strong>
+                        <ul>
+                            <li>Shopping cart functionality</li>
+                            <li>Booking calendar for services</li>
+                            <li>Secure payment processing (as described in section 3)</li>
+                            <li>Order tracking and management</li>
+                        </ul>
+                    </li>
+                    <li><strong>Post-Purchase:</strong>
+                        <ul>
+                            <li>Digital delivery of tickets or vouchers</li>
+                            <li>For physical products: Shipping coordination</li>
+                            <li>For handicrafts: NFT certificate generation</li>
+                            <li>Review and rating collection</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h3>6. Multilingual Support & Translation</h3>
+                <p><strong>Process Flow:</strong></p>
+                <ol>
+                    <li><strong>Language Detection & Selection:</strong>
+                        <ul>
+                            <li>Device language detection</li>
+                            <li>User language preference setting</li>
+                            <li>Context-specific language switching</li>
+                            <li>Regional dialect handling</li>
+                        </ul>
+                    </li>
+                    <li><strong>Content Localization:</strong>
+                        <ul>
+                            <li>Static content translation through resource files</li>
+                            <li>Dynamic content translation through API</li>
+                            <li>Cultural adaptation of content</li>
+                            <li>Handling of special characters and text directions</li>
+                        </ul>
+                    </li>
+                    <li><strong>Real-time Translation:</strong>
+                        <ul>
+                            <li>Text input translation for chat and search</li>
+                            <li>Voice input processing and translation</li>
+                            <li>Image-based text translation (signs, menus)</li>
+                            <li>Conversation facilitation between different languages</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <h3>7. Data Analytics & Reporting</h3>
+                <p><strong>Process Flow:</strong></p>
+                <ol>
+                    <li><strong>Data Collection:</strong>
+                        <ul>
+                            <li>User interaction tracking</li>
+                            <li>Transaction and booking data aggregation</li>
+                            <li>Feedback and review analysis</li>
+                            <li>Environmental and capacity metrics</li>
+                        </ul>
+                    </li>
+                    <li><strong>Data Processing:</strong>
+                        <ul>
+                            <li>ETL processes for data transformation</li>
+                            <li>Aggregation and summarization</li>
+                            <li>Statistical analysis and pattern detection</li>
+                            <li>Machine learning model application</li>
+                        </ul>
+                    </li>
+                    <li><strong>Insight Generation:</strong>
+                        <ul>
+                            <li>KPI calculation and tracking</li>
+                            <li>Trend analysis and forecasting</li>
+                            <li>Anomaly detection and alerting</li>
+                            <li>Recommendation generation for stakeholders</li>
+                        </ul>
+                    </li>
+                    <li><strong>Reporting & Visualization:</strong>
+                        <ul>
+                            <li>Dashboard generation for different user roles</li>
+                            <li>Interactive data exploration tools</li>
+                            <li>Scheduled report distribution</li>
+                            <li>Export capabilities for further analysis</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="card">
+                <h2>Integration Points</h2>
+                <h3>Internal System Integration</h3>
+                <ul>
+                    <li><strong>Event-Driven Communication:</strong>
+                        <ul>
+                            <li>Publish-subscribe pattern for system events</li>
+                            <li>Event sourcing for critical transactions</li>
+                            <li>Message queues for asynchronous processing</li>
+                            <li>Real-time notifications across components</li>
+                        </ul>
+                    </li>
+                    <li><strong>Service-to-Service Communication:</strong>
+                        <ul>
+                            <li>RESTful APIs with standardized formats</li>
+                            <li>GraphQL for flexible data querying</li>
+                            <li>gRPC for high-performance internal communication</li>
+                            <li>Circuit breakers for fault tolerance</li>
+                        </ul>
+                    </li>
+                    <li><strong>Shared Data Access:</strong>
+                        <ul>
+                            <li>Data consistency patterns across services</li>
+                            <li>Caching strategies for performance</li>
+                            <li>Database transaction management</li>
+                            <li>Data synchronization mechanisms</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>External System Integration</h3>
+                <ul>
+                    <li><strong>Third-Party APIs:</strong>
+                        <ul>
+                            <li>Maps and navigation services (Google Maps, OpenStreetMap)</li>
+                            <li>Weather data providers</li>
+                            <li>Public transportation APIs</li>
+                            <li>Payment gateways and financial services</li>
+                        </ul>
+                    </li>
+                    <li><strong>Blockchain Integration:</strong>
+                        <ul>
+                            <li>Smart contract interaction</li>
+                            <li>Wallet services connection</li>
+                            <li>Transaction monitoring and verification</li>
+                            <li>NFT minting and management</li>
+                        </ul>
+                    </li>
+                    <li><strong>Content Delivery Networks:</strong>
+                        <ul>
+                            <li>Media asset distribution</li>
+                            <li>AR/VR content delivery</li>
+                            <li>Static content caching</li>
+                            <li>Global distribution for performance</li>
+                        </ul>
+                    </li>
+                    <li><strong>IoT and Sensor Networks:</strong>
+                        <ul>
+                            <li>Environmental monitoring sensors</li>
+                            <li>Crowd density tracking</li>
+                            <li>Weather stations and local conditions</li>
+                            <li>Smart infrastructure integration</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>System Monitoring & Management</h2>
+                <ul>
+                    <li><strong>Performance Monitoring:</strong>
+                        <ul>
+                            <li>Real-time metrics collection</li>
+                            <li>Application performance monitoring</li>
+                            <li>Resource utilization tracking</li>
+                            <li>Response time and throughput measurement</li>
+                        </ul>
+                    </li>
+                    <li><strong>Error Handling & Logging:</strong>
+                        <ul>
+                            <li>Centralized logging system</li>
+                            <li>Error aggregation and classification</li>
+                            <li>Automated alerting for critical issues</li>
+                            <li>Debugging tools and diagnostics</li>
+                        </ul>
+                    </li>
+                    <li><strong>System Health:</strong>
+                        <ul>
+                            <li>Service health checks</li>
+                            <li>Database monitoring</li>
+                            <li>Network performance tracking</li>
+                            <li>Infrastructure status dashboards</li>
+                        </ul>
+                    </li>
+                    <li><strong>Deployment & Updates:</strong>
+                        <ul>
+                            <li>Continuous integration and deployment pipeline</li>
+                            <li>Canary releases for risk mitigation</li>
+                            <li>Rollback capabilities for failed deployments</li>
+                            <li>Feature flagging for controlled rollouts</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="next-section">
+                <a href="data-security.html">Next: Data & Security →</a>
+            </div>
+        </main>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>

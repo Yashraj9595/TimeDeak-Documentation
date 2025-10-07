@@ -1,0 +1,12 @@
+This is a placeholder file for the prototype images directory.
+
+The following images should be added to this directory:
+- home-screen.png
+- itinerary-planner.png
+- ar-view.png
+- marketplace.png
+- chatbot.png
+- blockchain-wallet.png
+- architecture-diagram.png
+
+These should be screenshots of the actual Pravas application prototype.

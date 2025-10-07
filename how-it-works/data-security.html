@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data & Security - Pravas Documentation</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+        </aside>
+        <main>
+            <h1>Data & Security</h1>
+            
+            <div class="card">
+                <h2>Overview</h2>
+                <p>Data security and privacy are fundamental aspects of the Pravas platform. This section outlines the comprehensive approach to protecting user data, ensuring secure transactions, and maintaining the integrity of the system while complying with relevant regulations. The security architecture is designed to address the unique challenges of a tourism application that handles sensitive personal and financial information.</p>
+            </div>
+
+            <div class="card">
+                <h2>Data Classification</h2>
+                <h3>Types of Data Handled</h3>
+                <ul>
+                    <li><strong>Personal Identifiable Information (PII):</strong>
+                        <ul>
+                            <li>User profiles and contact information</li>
+                            <li>Identity verification documents</li>
+                            <li>Location data and travel history</li>
+                            <li>Biometric data for authentication (if applicable)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Financial Information:</strong>
+                        <ul>
+                            <li>Payment card details</li>
+                            <li>Transaction records</li>
+                            <li>Blockchain wallet information</li>
+                            <li>Banking details for service providers</li>
+                        </ul>
+                    </li>
+                    <li><strong>Behavioral Data:</strong>
+                        <ul>
+                            <li>User preferences and interests</li>
+                            <li>App usage patterns</li>
+                            <li>Search history and viewed content</li>
+                            <li>Interaction with recommendations</li>
+                        </ul>
+                    </li>
+                    <li><strong>Content Data:</strong>
+                        <ul>
+                            <li>User-generated reviews and ratings</li>
+                            <li>Photos and videos uploaded by users</li>
+                            <li>Messages and communication logs</li>
+                            <li>Service provider listings and descriptions</li>
+                        </ul>
+                    </li>
+                    <li><strong>System Data:</strong>
+                        <ul>
+                            <li>Application logs and analytics</li>
+                            <li>Performance metrics</li>
+                            <li>Error reports and diagnostics</li>
+                            <li>Audit trails of system activities</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Data Sensitivity Levels</h3>
+                <ul>
+                    <li><strong>Level 1 - Public Data:</strong> Information freely available without authentication</li>
+                    <li><strong>Level 2 - Internal Data:</strong> General user data with basic protection needs</li>
+                    <li><strong>Level 3 - Confidential:</strong> Personal information requiring strong protection</li>
+                    <li><strong>Level 4 - Restricted:</strong> Highly sensitive data with stringent security controls</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Security Architecture</h2>
+                <h3>Defense-in-Depth Approach</h3>
+                <ul>
+                    <li><strong>Physical Security:</strong>
+                        <ul>
+                            <li>Secure data centers with controlled access</li>
+                            <li>Redundant power and cooling systems</li>
+                            <li>Environmental monitoring and protection</li>
+                            <li>Physical security compliance (ISO 27001)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Network Security:</strong>
+                        <ul>
+                            <li>Multi-layered firewall architecture</li>
+                            <li>Network segmentation and isolation</li>
+                            <li>Intrusion detection and prevention systems</li>
+                            <li>DDoS protection and mitigation</li>
+                            <li>Secure VPN for administrative access</li>
+                        </ul>
+                    </li>
+                    <li><strong>Application Security:</strong>
+                        <ul>
+                            <li>Secure coding practices and guidelines</li>
+                            <li>Regular security testing (SAST, DAST, penetration testing)</li>
+                            <li>Input validation and output encoding</li>
+                            <li>Protection against OWASP Top 10 vulnerabilities</li>
+                            <li>API security with rate limiting and validation</li>
+                        </ul>
+                    </li>
+                    <li><strong>Data Security:</strong>
+                        <ul>
+                            <li>Encryption for data at rest and in transit</li>
+                            <li>Tokenization of sensitive information</li>
+                            <li>Data masking for non-production environments</li>
+                            <li>Database activity monitoring</li>
+                            <li>Secure backup and recovery procedures</li>
+                        </ul>
+                    </li>
+                    <li><strong>Identity and Access Management:</strong>
+                        <ul>
+                            <li>Multi-factor authentication</li>
+                            <li>Role-based access control</li>
+                            <li>Principle of least privilege</li>
+                            <li>Regular access reviews and audits</li>
+                            <li>Secure credential management</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Encryption Strategy</h3>
+                <ul>
+                    <li><strong>Transport Layer Security:</strong>
+                        <ul>
+                            <li>TLS 1.3 for all client-server communications</li>
+                            <li>Certificate pinning in mobile applications</li>
+                            <li>Strong cipher suites and perfect forward secrecy</li>
+                            <li>Regular certificate rotation and management</li>
+                        </ul>
+                    </li>
+                    <li><strong>Data at Rest:</strong>
+                        <ul>
+                            <li>AES-256 encryption for stored data</li>
+                            <li>Transparent database encryption</li>
+                            <li>Encrypted file systems for sensitive storage</li>
+                            <li>Secure key management system</li>
+                        </ul>
+                    </li>
+                    <li><strong>End-to-End Encryption:</strong>
+                        <ul>
+                            <li>E2E encryption for user messages and communications</li>
+                            <li>Client-side encryption for sensitive user content</li>
+                            <li>Zero-knowledge architecture where appropriate</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Authentication & Authorization</h2>
+                <h3>User Authentication</h3>
+                <ul>
+                    <li><strong>Authentication Methods:</strong>
+                        <ul>
+                            <li>Email/password with strong password policies</li>
+                            <li>Phone number verification with OTP</li>
+                            <li>Biometric authentication (fingerprint, face recognition)</li>
+                            <li>Social authentication with additional verification</li>
+                            <li>Multi-factor authentication for sensitive operations</li>
+                        </ul>
+                    </li>
+                    <li><strong>Session Management:</strong>
+                        <ul>
+                            <li>JWT-based token authentication</li>
+                            <li>Secure token storage on client devices</li>
+                            <li>Token expiration and refresh mechanisms</li>
+                            <li>Session monitoring for suspicious activities</li>
+                            <li>Concurrent session limitations</li>
+                        </ul>
+                    </li>
+                    <li><strong>Account Protection:</strong>
+                        <ul>
+                            <li>Brute force attack prevention</li>
+                            <li>Account lockout policies</li>
+                            <li>Risk-based authentication for suspicious logins</li>
+                            <li>Secure account recovery procedures</li>
+                            <li>Login notifications and activity alerts</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Authorization Framework</h3>
+                <ul>
+                    <li><strong>Role-Based Access Control:</strong>
+                        <ul>
+                            <li>Granular user roles (tourist, service provider, admin)</li>
+                            <li>Permission sets for different operations</li>
+                            <li>Dynamic role assignment based on context</li>
+                            <li>Hierarchical role structure</li>
+                        </ul>
+                    </li>
+                    <li><strong>API Authorization:</strong>
+                        <ul>
+                            <li>OAuth 2.0 / OpenID Connect implementation</li>
+                            <li>Scoped access tokens</li>
+                            <li>API gateway authorization enforcement</li>
+                            <li>Microservice-to-microservice authentication</li>
+                        </ul>
+                    </li>
+                    <li><strong>Content Access Control:</strong>
+                        <ul>
+                            <li>Object-level permissions</li>
+                            <li>Content ownership verification</li>
+                            <li>Shared access management</li>
+                            <li>Temporary access grants</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Blockchain Security</h2>
+                <ul>
+                    <li><strong>Smart Contract Security:</strong>
+                        <ul>
+                            <li>Formal verification of contract code</li>
+                            <li>Security audits by third-party experts</li>
+                            <li>Known vulnerability prevention</li>
+                            <li>Upgrade mechanisms with security controls</li>
+                        </ul>
+                    </li>
+
+                    <li><strong>Transaction Security:</strong>
+                        <ul>
+                            <li>Transaction verification and validation</li>
+                            <li>Replay attack prevention</li>
+                            <li>Front-running protection</li>
+                            <li>Transaction monitoring for suspicious activity</li>
+                            <li>Fail-safe mechanisms for interrupted transactions</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Privacy Framework</h2>
+                <h3>Privacy by Design</h3>
+                <ul>
+                    <li><strong>Data Minimization:</strong>
+                        <ul>
+                            <li>Collection of only necessary data</li>
+                            <li>Purpose-specific data usage</li>
+                            <li>Automatic data pruning and deletion</li>
+                            <li>Anonymous or pseudonymous data where possible</li>
+                        </ul>
+                    </li>
+                    <li><strong>User Control:</strong>
+                        <ul>
+                            <li>Granular privacy settings</li>
+                            <li>Opt-in consent for data collection</li>
+                            <li>Data export functionality</li>
+                            <li>Right to be forgotten implementation</li>
+                        </ul>
+                    </li>
+                    <li><strong>Transparency:</strong>
+                        <ul>
+                            <li>Clear privacy policy in simple language</li>
+                            <li>Data usage notifications</li>
+                            <li>Processing activity records</li>
+                            <li>Third-party data sharing disclosure</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Regulatory Compliance</h3>
+                <ul>
+                    <li><strong>GDPR Compliance:</strong>
+                        <ul>
+                            <li>Data subject rights implementation</li>
+                            <li>Lawful basis for processing</li>
+                            <li>Data protection impact assessments</li>
+                            <li>Breach notification procedures</li>
+                        </ul>
+                    </li>
+                    <li><strong>Local Regulations:</strong>
+                        <ul>
+                            <li>Compliance with Indian data protection laws</li>
+                            <li>State-specific requirements in Jharkhand</li>
+                            <li>Tourism industry-specific regulations</li>
+                            <li>Financial data handling requirements</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cross-Border Data Transfers:</strong>
+                        <ul>
+                            <li>Data localization requirements</li>
+                            <li>International transfer mechanisms</li>
+                            <li>Regional data storage policies</li>
+                            <li>Cloud provider compliance verification</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Security Operations</h2>
+                <h3>Monitoring & Incident Response</h3>
+                <ul>
+                    <li><strong>Security Monitoring:</strong>
+                        <ul>
+                            <li>24/7 security operations center</li>
+                            <li>Real-time threat detection</li>
+                            <li>Behavioral analytics for anomaly detection</li>
+                            <li>Log aggregation and analysis</li>
+                            <li>Security information and event management (SIEM)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Incident Response:</strong>
+                        <ul>
+                            <li>Documented incident response plan</li>
+                            <li>Defined severity levels and escalation paths</li>
+                            <li>Forensic investigation capabilities</li>
+                            <li>Communication protocols for breaches</li>
+                            <li>Post-incident analysis and improvement</li>
+                        </ul>
+                    </li>
+                    <li><strong>Vulnerability Management:</strong>
+                        <ul>
+                            <li>Regular vulnerability scanning</li>
+                            <li>Patch management process</li>
+                            <li>Third-party dependency monitoring</li>
+                            <li>Bug bounty program</li>
+                            <li>Security advisory tracking</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Security Testing & Assurance</h3>
+                <ul>
+                    <li><strong>Application Security Testing:</strong>
+                        <ul>
+                            <li>Static application security testing (SAST)</li>
+                            <li>Dynamic application security testing (DAST)</li>
+                            <li>Interactive application security testing (IAST)</li>
+                            <li>Mobile application security testing</li>
+                            <li>API security testing</li>
+                        </ul>
+                    </li>
+                    <li><strong>Penetration Testing:</strong>
+                        <ul>
+                            <li>Regular external penetration tests</li>
+                            <li>Internal security assessments</li>
+                            <li>Red team exercises</li>
+                            <li>Social engineering testing</li>
+                            <li>Physical security testing</li>
+                        </ul>
+                    </li>
+                    <li><strong>Compliance Auditing:</strong>
+                        <ul>
+                            <li>Regular security compliance audits</li>
+                            <li>Third-party security assessments</li>
+                            <li>Certification maintenance (ISO 27001, PCI DSS)</li>
+                            <li>Continuous compliance monitoring</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Disaster Recovery & Business Continuity</h2>
+                <ul>
+                    <li><strong>Data Backup Strategy:</strong>
+                        <ul>
+                            <li>Regular automated backups</li>
+                            <li>Multi-region data replication</li>
+                            <li>Point-in-time recovery capabilities</li>
+                            <li>Backup encryption and security</li>
+                            <li>Regular restoration testing</li>
+                        </ul>
+                    </li>
+                    <li><strong>High Availability Design:</strong>
+                        <ul>
+                            <li>Redundant infrastructure components</li>
+                            <li>Load balancing across availability zones</li>
+                            <li>Automated failover mechanisms</li>
+                            <li>Geographic distribution of services</li>
+                            <li>No single point of failure architecture</li>
+                        </ul>
+                    </li>
+                    <li><strong>Disaster Recovery:</strong>
+                        <ul>
+                            <li>Documented disaster recovery plan</li>
+                            <li>Recovery time objectives (RTO) and recovery point objectives (RPO)</li>
+                            <li>Regular disaster recovery drills</li>
+                            <li>Alternative site operations capability</li>
+                            <li>Communication plan during disasters</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="next-section">
+                <a href="../challenges.html">Next: Challenges & Solutions →</a>
+            </div>
+        </main>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>

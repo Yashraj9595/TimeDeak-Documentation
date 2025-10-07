@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pravas - System Diagrams</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .diagram-container {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .diagram-title {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .diagram-description {
+            margin-bottom: 1.5rem;
+            color: #6c757d;
+            line-height: 1.6;
+        }
+        
+        .diagram-svg {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            background: white;
+        }
+        
+        .diagram-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .diagram-link:hover {
+            background: #0056b3;
+        }
+        
+        .share-section {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+        
+        .share-link {
+            font-family: monospace;
+            background: #f8f9fa;
+            padding: 0.5rem;
+            border-radius: 4px;
+            word-break: break-all;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+        </aside>
+        <main>
+            <h1>System Diagrams</h1>
+            <div class="card">
+                <p>This section contains comprehensive diagrams that illustrate the architecture, user flows, and system components of the Pravas tourism platform. These visual representations help understand the complex interactions between different modules and stakeholders.</p>
+            </div>
+
+            <!-- Tourist Journey Diagram -->
+            <div class="diagram-container" id="tourist-journey">
+                <h2 class="diagram-title">Tourist Journey Diagram</h2>
+                <div class="diagram-description">
+                    <p>This diagram illustrates the complete tourist journey through the Pravas platform, from initial discovery to post-trip engagement. It shows how tourists interact with different features and services throughout their travel experience, highlighting the seamless integration of AI-powered recommendations, AR/VR experiences, and blockchain-secured transactions.</p>
+                    <p><strong>Journey Stages:</strong></p>
+                    <ul>
+                        <li><strong>Discovery & Planning:</strong> AI-powered destination recommendations, itinerary planning, and service discovery</li>
+                        <li><strong>Booking & Preparation:</strong> Secure blockchain transactions, AR/VR previews, and travel preparation</li>
+                        <li><strong>On-Site Experience:</strong> Real-time navigation, AR overlays, local marketplace interactions, and weather alerts</li>
+                        <li><strong>Post-Trip Engagement:</strong> Feedback submission, social sharing, and future trip planning</li>
+                    </ul>
+                </div>
+                <img src="images/svg/Tourist journey.drawio.svg" alt="Tourist Journey Diagram" class="diagram-svg">
+                <div class="share-section">
+                    <strong>Share this diagram:</strong>
+                    <div class="share-link" id="share-tourist-journey">https://pravas-documentation.vercel.app/diagrams.html#tourist-journey</div>
+                    <button onclick="copyToClipboard('share-tourist-journey')" class="diagram-link">Copy Link</button>
+                </div>
+            </div>
+
+            <!-- System Architecture Detailed -->
+            <div class="diagram-container" id="system-architecture-detailed">
+                <h2 class="diagram-title">Detailed System Architecture</h2>
+                <div class="diagram-description">
+                    <p>This detailed system architecture diagram provides a comprehensive view of the technical infrastructure, showing the specific technologies, services, and data flow patterns used in the Pravas platform.</p>
+                    <p><strong>Architecture Layers:</strong></p>
+                    <ul>
+                        <li><strong>Presentation Layer:</strong> Mobile apps, web interface, and AR/VR interfaces</li>
+                        <li><strong>Application Layer:</strong> API gateways, microservices, and business logic</li>
+                        <li><strong>Data Layer:</strong> Databases, file storage, and caching systems</li>
+                        <li><strong>Integration Layer:</strong> Third-party services and external APIs</li>
+                    </ul>
+                </div>
+                <img src="images/svg/System Architecture.drawio.svg" alt="Detailed System Architecture" class="diagram-svg">
+                <div class="share-section">
+                    <strong>Share this diagram:</strong>
+                    <div class="share-link" id="share-architecture-detailed">https://pravas-documentation.vercel.app/diagrams.html#system-architecture-detailed</div>
+                    <button onclick="copyToClipboard('share-architecture-detailed')" class="diagram-link">Copy Link</button>
+                </div>
+            </div>
+
+            <!-- Use Case Diagram -->
+            <div class="diagram-container" id="use-case-diagram">
+                <h2 class="diagram-title">Use Case Diagram</h2>
+                <div class="diagram-description">
+                    <p>This use case diagram shows the different actors and their interactions with the Pravas system. It identifies the main functionalities available to tourists, local vendors, administrators, and other stakeholders.</p>
+                    <p><strong>Main Actors:</strong></p>
+                    <ul>
+                        <li><strong>Tourists:</strong> Primary users who plan trips, book services, and explore destinations</li>
+                        <li><strong>Local Vendors:</strong> Service providers who list their offerings on the marketplace</li>
+                        <li><strong>Administrators:</strong> Platform managers who oversee operations and content</li>
+                        <li><strong>AI System:</strong> Automated services for recommendations and support</li>
+                    </ul>
+                </div>
+                <img src="images/svg/Use Case Diagram.drawio.svg" alt="Use Case Diagram" class="diagram-svg">
+                <div class="share-section">
+                    <strong>Share this diagram:</strong>
+                    <div class="share-link" id="share-use-case">https://pravas-documentation.vercel.app/diagrams.html#use-case-diagram</div>
+                    <button onclick="copyToClipboard('share-use-case')" class="diagram-link">Copy Link</button>
+                </div>
+            </div>
+
+            <!-- User Flow Diagram -->
+            <div class="diagram-container" id="user-flow-diagram">
+                <h2 class="diagram-title">User Flow Diagram</h2>
+                <div class="diagram-description">
+                    <p>This user flow diagram illustrates the step-by-step journey of a tourist using the Pravas platform, from initial registration to completing their trip. It shows the decision points, interactions, and possible paths through the system.</p>
+                    <p><strong>Key Flow Stages:</strong></p>
+                    <ul>
+                        <li><strong>Onboarding:</strong> Registration, profile setup, and preference configuration</li>
+                        <li><strong>Planning:</strong> Destination selection, itinerary creation, and service booking</li>
+                        <li><strong>Experience:</strong> Real-time navigation, AR/VR previews, and local interactions</li>
+                        <li><strong>Completion:</strong> Feedback submission, payment processing, and trip documentation</li>
+                    </ul>
+                </div>
+                <img src="images/svg/Uase Flows.drawio.svg" alt="User Flow Diagram" class="diagram-svg">
+                <div class="share-section">
+                    <strong>Share this diagram:</strong>
+                    <div class="share-link" id="share-user-flow">https://pravas-documentation.vercel.app/diagrams.html#user-flow-diagram</div>
+                    <button onclick="copyToClipboard('share-user-flow')" class="diagram-link">Copy Link</button>
+                </div>
+            </div>
+
+            <div class="next-section">
+                <a href="how-it-works/user-flow.html">Next: User Flow Details →</a>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Function to copy shareable links to clipboard
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            
+            navigator.clipboard.writeText(text).then(function() {
+                // Change button text temporarily to show success
+                const button = element.nextElementSibling;
+                const originalText = button.textContent;
+                button.textContent = 'Copied!';
+                button.style.background = '#28a745';
+                
+                setTimeout(function() {
+                    button.textContent = originalText;
+                    button.style.background = '#007bff';
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Could not copy text: ', err);
+                alert('Could not copy link. Please copy manually.');
+            });
+        }
+
+        // Smooth scroll to anchor when page loads with hash
+        window.addEventListener('load', function() {
+            if (window.location.hash) {
+                const target = document.querySelector(window.location.hash);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
